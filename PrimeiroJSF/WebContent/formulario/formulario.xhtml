@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Formulário do Tutorial</title>
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+		crossorigin="anonymous" />
+
+</h:head>
+<h:body>
+	<h1>Formulário de Login</h1>
+	<div class="container">
+		<br></br>
+		<h:form>
+			<div class="form-group">
+				<label for="nome">Nome:</label>
+				<h:inputText class="form-control" value="#clinteMB.cliente.nome"></h:inputText>
+			</div>
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<h:inputText class="form-control" value="#clinteMB.cliente.email"></h:inputText>
+			</div>
+			<div class="form-group">
+				<label for="pwd">Password:</label>
+				<h:inputSecret class="form-control" value="#clinteMB.cliente.senha"></h:inputSecret>
+			</div>
+			<h:commandButton class="btn btn-primary" value="#clinteMB.gravar"></h:commandButton>
+
+		</h:form>
+	</div>
+</h:body>
+</html>
+
+
+
