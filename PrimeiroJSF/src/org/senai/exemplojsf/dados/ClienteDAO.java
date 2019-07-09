@@ -5,27 +5,28 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import org.senai.exemplojsf.dados.*;
+import org.senai.exemplojsf.modelos.Cliente;
 
 public class ClienteDAO {
 	
-	public boolean inserir() {
+	public boolean incluir(Cliente objCliente) {
 		Connection conexao = new ConectarJDBC().getConectar();
 		
 		if(conexao != null) {
 			String sql = "insert into cliente(" + 
-					"nome_completo ," + 
+					"nome ," + 
 					"email        ," + 
-					"senha         ," + 
+					"senha        ) " + 
 					
 					"values (?," + 
 					"		?," + 
-					"		?," +  
+					"		?" +  
 					"			)";
 			try {
 				PreparedStatement prepararSQL = conexao.prepareStatement(sql);
-				//prepararSQL.setString(1, nome);
-				//prepararSQL.setString(2, email);
-				//prepararSQL.setString(3, senha);
+				prepararSQL.setString(1, objCliente.getNome());
+				prepararSQL.setString(2, objCliente.getEmail());
+				prepararSQL.setString(3, objCliente.getSenha());
 				 
 				
 				
